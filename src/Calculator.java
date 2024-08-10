@@ -15,17 +15,14 @@ public class Calculator extends JFrame implements ActionListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Create and configure the text field
         textField = new JTextField();
         textField.setFont(new Font("Arial", Font.PLAIN, 24));
         textField.setHorizontalAlignment(JTextField.RIGHT);
         add(textField, BorderLayout.NORTH);
 
-        // Create panel for buttons
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(4, 4, 10, 10));
 
-        // Create buttons and add them to the panel
         String[] buttons = {
                 "7", "8", "9", "/",
                 "4", "5", "6", "*",
@@ -40,12 +37,10 @@ public class Calculator extends JFrame implements ActionListener {
             panel.add(button);
         }
 
-        // Add panel to the frame
         add(panel, BorderLayout.CENTER);
 
-        // Adjust frame size and position
         pack();
-        setLocationRelativeTo(null); // Center the frame on the screen
+        setLocationRelativeTo(null);
     }
 
     @Override
@@ -85,7 +80,6 @@ public class Calculator extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        // Create and display the calculator
         SwingUtilities.invokeLater(() -> {
             Calculator calculator = new Calculator();
             calculator.setVisible(true);
